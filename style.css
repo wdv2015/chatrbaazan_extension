@@ -1,43 +1,43 @@
 @font-face {
-	font-family: iranyekan;
-	font-size: 0.9em;
-	font-weight: 700;
-	src: url("/iranyekanweblight.52efa674f832684a8ddd.woff") format("woff");
+  font-family: iranyekan;
+  font-size: 0.9em;
+  font-weight: 700;
+  src: url("/iranyekanweblight.52efa674f832684a8ddd.woff") format("woff");
 }
 body {
-	font-family: iranyekan, serif;
+  font-family: iranyekan, serif;
 }
 
 #root {
-	height: 600px;
-	width: 360px;
+  height: 600px;
+  width: 360px;
 }
 #changeColor {
-	outline: none;
+  outline: none;
 }
 #image {
-	border-bottom: 1px solid rgb(175, 175, 175);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-left: 10px;
-	padding-right: 10px;
+  border-bottom: 1px solid rgb(175, 175, 175);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.image_content {
-	width: 70px;
-	height: 70px;
-	margin: 10px;
-	border-radius: 50px;
+#image_content {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  border-radius: 50px;
 }
 
 .card {
-	margin: 3% 4% 3% 4%;
-	padding: 2%;
-	border-radius: 10px;
-	box-shadow: 0px 0px 10px -5px;
+  margin: 3% 4% 3% 4%;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px -5px;
 }
 
 .card:hover {
-	background-color: rgb(21, 44, 83);
-	color: #ffffff;
+  background-color: rgb(21, 44, 83);
+  color: #ffffff;
 }
