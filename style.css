@@ -41,3 +41,13 @@ body {
   background-color: rgb(21, 44, 83);
   color: #ffffff;
 }
+
+.offer_off {
+    background-color: #ec2b54;
+    color: #fff;
+    position: absolute;
+    top: 12px;
+    left: -0.5px;
+    font-size: 12px;
+
+}
