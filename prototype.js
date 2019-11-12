@@ -37,9 +37,15 @@ xmlhttp.onreadystatechange = function() {
       offCode.setAttribute("class", "offCode");
       offCode.textContent = element.discount_code;
 
+      const offerOff = document.createElement("span");
+      offerOff.setAttribute("class" , "offer_off");
+      offerOff.textContent = element.chatrbazi;
+
       container.appendChild(eachOff);
       eachOff.appendChild(desc);
       eachOff.appendChild(offCode);
+      eachOff.appendChild(offerOff);
+
     });
 
     //container.appendChild(image_test);
