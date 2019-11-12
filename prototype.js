@@ -1,27 +1,4 @@
-/*const app = document.getElementById("changeColor");
 
-const container = document.createElement("div");
-container.setAttribute("class", "container");
-
-app.appendChild(container);
-
-var request = new XMLHttpRequest();
-request.open("GET", "https://ghibliapi.herokuapp.com/films", true);
-request.onload = function() {
-  var data = JSON.parse(this.response);
-  data.forEach(movie => {
-    const eachOff = document.createElement("div");
-    eachOff.setAttribute("class", "card");
-
-    const offCode = document.createElement("p");
-    offCode.setAttribute("class", "offCode");
-    offCode.textContent = movie.title;
-
-    container.appendChild(eachOff);
-    eachOff.appendChild(offCode);
-  });
-};
-request.send();*/
 
 const app = document.getElementById("changeColor");
 
@@ -32,7 +9,7 @@ app.appendChild(container);
 
 var API_KEY = "12959506-0c707c1255a41052fb69dcc17";
 var URL =
-  "https://api.chatrbaazan.ir/api/v1/extension/?url=" + "https://snappfood.ir";
+  "https://api.chatrbaazan.ir/api/v1/extension/?url=" + "changal.com";
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
@@ -44,9 +21,9 @@ xmlhttp.onreadystatechange = function() {
     var image_test = document.getElementById("image_content");
     image_test.setAttribute("src", myObj.image);
     //console.log(myObj.hits.length);
-    chrome.browserAction.setBadgeText({
-      text: myObj.product_company.length + ""
-    });
+    // chrome.browserAction.setBadgeText({
+    //   text: myObj.product_company.length + ""
+    // });
 
     myObj.product_company.forEach(element => {
       const eachOff = document.createElement("div");
