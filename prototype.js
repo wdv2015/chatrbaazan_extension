@@ -10,6 +10,7 @@ app.appendChild(container);
 var API_KEY = "12959506-0c707c1255a41052fb69dcc17";
 var URL =
   "https://api.chatrbaazan.ir/api/v1/extension/?url=" + "changal.com";
+counter = 0;
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
@@ -33,18 +34,41 @@ xmlhttp.onreadystatechange = function() {
       desc.setAttribute("class", "desc");
       desc.textContent = element.name;
 
-      const offCode = document.createElement("p");
-      offCode.setAttribute("class", "offCode");
-      offCode.textContent = element.discount_code;
+      // const offCode = document.createElement("p");
+      // offCode.setAttribute("class", "offCode");
+      // offCode.textContent = element.discount_code;
 
       const offerOff = document.createElement("span");
       offerOff.setAttribute("class" , "offer_off");
       offerOff.textContent = element.chatrbazi;
 
+      const copyDiv = document.createElement("div");
+      copyDiv.setAttribute("class","copy_div");
+
+      const copyInput = document.createElement("input");
+      copyInput.setAttribute("id" , "inputid" + counter);
+      copyInput.setAttribute("value" , element.discount_code);
+      copyInput.setAttribute("disabled","disabled");
+      // copyInput.textContent = element.discount_code;
+
+      const copyBtn = document.createElement("button");
+      copyBtn.setAttribute("id" ,"id"+counter);
+
+      const copyTooltip = document.createElement("span");
+      copyTooltip.setAttribute("id" , "spanid" + counter);
+
+      eachOff.appendChild(copyDiv);
+      copyDiv.appendChild(copyInput);
+      copyDiv.appendChild(copyBtn);
+      copyBtn.appendChild(copyTooltip);
+
+
       container.appendChild(eachOff);
       eachOff.appendChild(desc);
-      eachOff.appendChild(offCode);
+      //eachOff.appendChild(offCode);
       eachOff.appendChild(offerOff);
+
+      counter++;
 
     });
 
