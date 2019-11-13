@@ -1,6 +1,6 @@
 @font-face {
   font-family: iranyekan;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 700;
   src: url("/iranyekanweblight.52efa674f832684a8ddd.woff") format("woff");
 }
@@ -35,6 +35,7 @@ body {
   padding: 2%;
   border-radius: 10px;
   box-shadow: 0px 0px 10px -5px;
+  overflow: auto;
 }
 
 .card:hover {
@@ -45,9 +46,9 @@ body {
 .offer_off {
     background-color: #ec2b54;
     color: rgb(7, 5, 5);
-    position: relative;
-    top: -70px;
-    left: -7px;
+    /* position: relative;
+    top: -65px;
+    left: -7px; */
     font-size: 12px;
     padding-right: 5px;
     padding-left: 5px;
@@ -56,10 +57,24 @@ body {
 }
 
 .coupon_code {
-    background-color: #ddd;
+    background-color: #adb5c3;
+    border: none;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
 }
+
+/*for div containing of button and input*/
 
 .copy_div {
     background-color: darkgray;
+    padding: 0;
+    height: 50px;
+    width: max-content;
+}
 
+.copy_button {
+    background-attachment: #ddd;
+    border: none;
+    height: 100%;
 }

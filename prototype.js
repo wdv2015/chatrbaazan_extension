@@ -1,15 +1,15 @@
 URL = "";
 
-chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT},
-   function(tabs) {
-       URL2 = tabs[0].url;
-       URL2 = URL2.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0];
+chrome.tabs.query({ 'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT },
+    function (tabs) {
+        URL2 = tabs[0].url;
+        URL2 = URL2.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0];
 
-       URL =
-           "https://api.chatrbaazan.ir/api/v1/extension/?url=" + URL2;
-       toCreateTest();
-}
-  );
+        URL =
+            "https://api.chatrbaazan.ir/api/v1/extension/?url=" + URL2;
+        toCreateTest();
+    }
+);
 
 function toCreateTest() {
     const app = document.getElementById("changeColor");
@@ -20,7 +20,7 @@ function toCreateTest() {
     app.appendChild(container);
 
     var API_KEY = "12959506-0c707c1255a41052fb69dcc17";
-// var URL = "https://api.chatrbaazan.ir/api/v1/extension/?url=" + "changal.com";
+    // var URL = "https://api.chatrbaazan.ir/api/v1/extension/?url=" + "changal.com";
     counter = 0;
 
     var xmlhttp = new XMLHttpRequest();
@@ -58,6 +58,7 @@ function toCreateTest() {
                 copyDiv.setAttribute("class", "copy_div");
 
                 const copyInput = document.createElement("input");
+                copyInput.setAttribute("class", "coupon_code")
                 copyInput.setAttribute("id", "inputid" + counter);
                 copyInput.setAttribute("value", element.discount_code);
                 copyInput.setAttribute("disabled", "disabled");
@@ -65,20 +66,30 @@ function toCreateTest() {
 
                 const copyBtn = document.createElement("button");
                 copyBtn.setAttribute("id", "id" + counter);
+                copyBtn.setAttribute("class", "copy_button");
+                copyBtn.textContent = 'کپی';
 
                 const copyTooltip = document.createElement("span");
                 copyTooltip.setAttribute("id", "spanid" + counter);
+                copyTooltip.setAttribute("class", "copy_tooltip");
 
-                eachOff.appendChild(copyDiv);
+                const maincont = document.createElement("div");
+                maincont.setAttribute("class", "main")
+
+
                 copyDiv.appendChild(copyInput);
                 copyDiv.appendChild(copyBtn);
+
                 copyBtn.appendChild(copyTooltip);
 
+                eachOff.appendChild(maincont);
+                eachOff.appendChild(offerOff);
+
+                maincont.appendChild(desc);
+                maincont.appendChild(copyDiv);
 
                 container.appendChild(eachOff);
-                eachOff.appendChild(desc);
                 //eachOff.appendChild(offCode);
-                eachOff.appendChild(offerOff);
 
                 counter++;
 
