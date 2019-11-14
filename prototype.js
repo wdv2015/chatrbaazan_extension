@@ -27,8 +27,7 @@ function toCreateTest() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
-            document.getElementById("result_num").innerHTML =
-                "نام سایت : " + myObj.name;
+            document.getElementById("result_num").innerHTML = myObj.name;
             /*myObj.hits.length*/
 
             var image_test = document.getElementById("image_content");
@@ -41,8 +40,9 @@ function toCreateTest() {
             myObj.product_company.forEach(element => {
                 const eachOff = document.createElement("div");
                 eachOff.setAttribute("class", "card");
+                eachOff.setAttribute("dir", "rtl");
 
-                const desc = document.createElement("p");
+                const desc = document.createElement("h4");
                 desc.setAttribute("class", "desc");
                 desc.textContent = element.name;
 
@@ -58,7 +58,7 @@ function toCreateTest() {
                 copyDiv.setAttribute("class", "copy_div");
 
                 const copyInput = document.createElement("input");
-                copyInput.setAttribute("class", "coupon_code")
+                copyInput.setAttribute("class", "coupon_code");
                 copyInput.setAttribute("id", "inputid" + counter);
                 copyInput.setAttribute("value", element.discount_code);
                 copyInput.setAttribute("disabled", "disabled");
@@ -74,16 +74,16 @@ function toCreateTest() {
                 copyTooltip.setAttribute("class", "copy_tooltip");
 
                 const maincont = document.createElement("div");
-                maincont.setAttribute("class", "main")
+                maincont.setAttribute("class", "main");
 
 
-                copyDiv.appendChild(copyInput);
                 copyDiv.appendChild(copyBtn);
+                copyDiv.appendChild(copyInput);
 
                 copyBtn.appendChild(copyTooltip);
 
-                eachOff.appendChild(maincont);
                 eachOff.appendChild(offerOff);
+                eachOff.appendChild(maincont);
 
                 maincont.appendChild(desc);
                 maincont.appendChild(copyDiv);
