@@ -95,15 +95,14 @@ body {
 
 
 .copy_button {
-    background-attachment: #ddd;
+    background-color: #ddd;
     border: none;
-    height: 100%;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    max-height: 100%;
     text-align: center;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     font-size: inherit;
+    font-family: inherit;
 }
 
 .tooltip {
