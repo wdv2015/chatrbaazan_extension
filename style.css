@@ -6,8 +6,7 @@
 body {
   font-family: iranyekan, serif;
   font-size: 1em;
-  padding-right: 15px;
-  margin-top: 0px;
+  margin: 0px;
 }
 
 #root {
@@ -28,7 +27,6 @@ body {
   top: 0px;
   z-index: 10;
   height: 100px;
-  max-width: 100%;
   width: 100%;
   background-color: white;
 }
@@ -38,19 +36,21 @@ body {
   margin: 10px;
 }
 
-/* #result_num {
-    font-size: 2em;
-} */
+#result_num {
+    margin-right: 40px;
+}
 
 
 .card {
-  margin: 3% 4% 3% 4%;
-  padding: 3%;
-  border-radius: 10px;
+  margin: 3% 2% 3% 2%;
+  padding: 3px 3px 7px 3px;
+  border-radius: 5px;
   box-shadow: 0px 0px 10px -5px;
-  overflow: auto;
   text-align: center;
-
+  /* clearfix hack */
+  overflow: hidden;
+  /* for sticking each offer-off to card */
+  position: relative;
 }
 
 .card:hover {
@@ -61,14 +61,16 @@ body {
 .offer_off {
     background-color: #ec2b54;
     color: rgb(7, 5, 5);
-    float: left;
     position: absolute;
-    left: 22px;
+    left:0px;
+    bottom: 15px;
     font-size: 12px;
     padding-right: 5px;
     padding-left: 5px;
+    z-index: 2;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+    height:max-content;
 }
 
 .coupon_code {
@@ -87,22 +89,26 @@ body {
 .copy_div {
     background-color:transparent;
     width: max-content;
-    display: inline-block;
-    overflow: auto;
+    display: inline-flex;
     font-size: 1em;
+    border-radius: 5px;
+    align-items: stretch;
 }
-
-
 
 .copy_button {
     background-color: #ddd;
     border: none;
-    max-height: 100%;
     text-align: center;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     font-size: inherit;
     font-family: inherit;
+    cursor: pointer;
+}
+
+.desc {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .tooltip {

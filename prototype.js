@@ -38,7 +38,7 @@ function toCreateTest() {
                 eachOff.setAttribute("class", "card");
                 eachOff.setAttribute("dir", "rtl");
 
-                const desc = document.createElement("h4");
+                const desc = document.createElement("h5");
                 desc.setAttribute("class", "desc");
                 desc.textContent = element.name;
 
@@ -78,8 +78,8 @@ function toCreateTest() {
 
                 copyBtn.appendChild(copyTooltip);
 
-                eachOff.appendChild(offerOff);
                 eachOff.appendChild(maincont);
+                eachOff.appendChild(offerOff);
 
                 maincont.appendChild(desc);
                 maincont.appendChild(copyDiv);
