@@ -6,6 +6,9 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({ color: "#3aa757" }, function() {
     console.log("The color is green.");
   });
+
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+
 URL2 = "digistyle.com";
 chrome.tabs.onUpdated.addListener(function (){
   chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT},
@@ -28,22 +31,9 @@ chrome.tabs.onUpdated.addListener(function (){
        }
        xmlhttp.open("GET", URL, true);
        xmlhttp.send();
-       //alert(URL);
 
    }
    );
   });
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-    chrome.declarativeContent.onPageChanged.addRules([
-      {
-        conditions: [
-          new chrome.declarativeContent.PageStateMatcher({
-
-            pageUrl: { hostEquals: "changal.com" }
-          })
-        ],
-        actions: [new chrome.declarativeContent.ShowPageAction()]
-      }
-    ]);
   });
 });
