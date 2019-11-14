@@ -4,7 +4,6 @@ chrome.tabs.query({ 'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT
     function (tabs) {
         URL2 = tabs[0].url;
         URL2 = URL2.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0];
-
         URL =
             "https://api.chatrbaazan.ir/api/v1/extension/?url=" + URL2;
         toCreateTest();
@@ -32,10 +31,7 @@ function toCreateTest() {
 
             var image_test = document.getElementById("image_content");
             image_test.setAttribute("src", myObj.image);
-            //console.log(myObj.hits.length);
-            // chrome.browserAction.setBadgeText({
-            //   text: myObj.product_company.length + ""
-            // });
+
 
             myObj.product_company.forEach(element => {
                 const eachOff = document.createElement("div");
