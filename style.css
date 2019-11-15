@@ -103,6 +103,7 @@ body {
     font-family: inherit;
     cursor: pointer;
     outline: none;
+    position: relative;
 }
 
 .desc {
@@ -114,34 +115,34 @@ body {
 
 
 .copy_tooltip {
-    width: max-content;
-    background-color: rgba(141, 175, 138);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    border: 1px solid honeydew;
-    padding: 3px;
-    position: absolute;
-    top: -33%;
-    left: 102%;
-    z-index: 15;
-    margin-left: -75px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 0.75em;
+  width: max-content;
+  background-color: rgba(141, 175, 138);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid honeydew;
+  padding: 3px;
+  position: absolute;
+  top:-36px;
+  left:51px;
+  z-index: 15;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.75em;
     visibility: hidden;
 
 }
 
 .copy_tooltip::after {
-    content: "";
-    position: absolute;
-    top: 104%;
-    left: 67%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: honeydew transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 104%;
+  left: 67%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: honeydew transparent transparent transparent;
 }
 
 
