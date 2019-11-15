@@ -36,3 +36,16 @@ chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         );
     });
 });
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    console.log('message recieved');
+    if (request.command == 'copy') {
+        const dummy = document.createElement("textarea");
+        dummy.innerHTML = request.text;
+        document.body.appendChild(dummy);
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+        sendResponse({ response: 'copied' });
+    }
+});

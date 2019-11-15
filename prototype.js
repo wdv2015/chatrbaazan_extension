@@ -68,6 +68,7 @@ function toCreateTest() {
                 const copyTooltip = document.createElement("span");
                 copyTooltip.setAttribute("id", "spanid" + counter);
                 copyTooltip.setAttribute("class", "copy_tooltip");
+                // copyTooltip.innerHTML = 'کد کپی شد';
 
                 const maincont = document.createElement("div");
                 maincont.setAttribute("class", "main");
@@ -78,11 +79,11 @@ function toCreateTest() {
 
                 copyBtn.appendChild(copyTooltip);
 
-                eachOff.appendChild(maincont);
                 eachOff.appendChild(offerOff);
+                eachOff.appendChild(maincont);
 
-                maincont.appendChild(desc);
                 maincont.appendChild(copyDiv);
+                maincont.appendChild(desc);
 
                 container.appendChild(eachOff);
                 //eachOff.appendChild(offCode);
@@ -91,9 +92,50 @@ function toCreateTest() {
 
             });
 
+            const button = document.getElementsByClassName('copy_button');
+
+            console.log(button.length);
+            for (i = 0; i < button.length; i++) {
+                button[i].addEventListener('click', function (event) {
+                    console.log(event.target.id);
+                    let copyText = document.getElementById("input" + event.target.id);
+                    chrome.runtime.sendMessage({ command: "copy", text: copyText.value }, function (response) {
+                        console.log(response.response);
+                        if (response.response == 'copied') {
+                            console.log('in if')
+                            console.log(event)
+                            console.log("span" + event.target.id)
+                            let tooltip = document.getElementById("span" + event.target.id);
+                            tooltip.style.visibility = 'visible';
+                            tooltip.innerHTML = "کد کپی شد";
+                            tooltip.style.opacity = '1';
+                        }
+
+                    });
+                    // copyText.focus();
+                    // copyText.select();
+                    // document.execCommand("copy");
+                    console.log(copyText);
+                    // console.log(copyText.focus());
+                    // console.log(copyText.select());
+                    // console.log(document.execCommand("copy"));
+                    // console.log(123)
+
+                });
+                button[i].addEventListener('mouseout', function (event) {
+                    let tooltip = document.getElementById("span" + event.target.id);
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.opacity = '0';
+                });
+
+            }
+
             //container.appendChild(image_test);
         }
     };
     xmlhttp.open("GET", URL, true);
     xmlhttp.send();
 }
+
+
+

@@ -1,20 +1,28 @@
 {
-  "name": "Getting Started Example",
-  "version": "1.0",
-  "description": "Build an Extension!",
-  "permissions": ["tabs","declarativeContent", "storage"],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
-  "page_action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "128": "images/favicon.png"
-    }
-  },
-  "icons": {
-    "128": "images/favicon.png"
-  },
-  "manifest_version": 2
+    "name": "Getting Started Example",
+    "version": "1.0",
+    "description": "Build an Extension!",
+    "permissions": [
+        "tabs",
+        "declarativeContent",
+        "storage",
+        "clipboardWrite",
+        "clipboardRead"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "images/favicon.png"
+        }
+    },
+    "icons": {
+        "128": "images/favicon.png"
+    },
+    "manifest_version": 2
 }
