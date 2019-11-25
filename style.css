@@ -13,9 +13,11 @@ body {
   height: 600px;
   width: 360px;
 }
+
 #changeColor {
   outline: none;
 }
+
 #image {
   border-bottom: 1px solid rgb(175, 175, 175);
   display: flex;
@@ -30,6 +32,7 @@ body {
   width: 100%;
   background-color: white;
 }
+
 #image_content {
   width: 70px;
   height: 70px;
@@ -145,7 +148,23 @@ body {
   border-color: honeydew transparent transparent transparent;
 }
 
+.fulldesc {
+    text-decoration: none;
+}
 
+.more_button {
+    color: white;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #007bff;
+    border :none;
+    padding: 5px;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: 700;
+}
 
 
 

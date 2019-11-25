@@ -34,7 +34,7 @@ function toCreateTest() {
 
 
             myObj.product_company.forEach(element => {
-                if (getCuurentDate() <= element.expiration_date || element.expiration_date == null) {
+                if (getCuurentDate() >= element.expiration_date || element.expiration_date == null) {
                     const eachOff = document.createElement("div");
                     eachOff.setAttribute("class", "card");
                     eachOff.setAttribute("dir", "rtl");
@@ -74,14 +74,23 @@ function toCreateTest() {
 
                         const _link_ = "https://chatrbaazan.ir/offer/" + element.slug;
 
+                        const morebtn = document.createElement("button");
+                        morebtn.setAttribute("class", "more_button");
+                        morebtn.textContent = "توضیح بیشتر";
+
+
+
+
                         const linkToMainSite = document.createElement("a");
                         linkToMainSite.setAttribute("class", "fullDesc");
                         linkToMainSite.setAttribute("target", "_blank");
                         linkToMainSite.setAttribute("href", _link_);
-                        linkToMainSite.textContent = "برای مشاهده ی توضیح بیشتر کلیک کنید..."
 
                         const maincont = document.createElement("div");
                         maincont.setAttribute("class", "main");
+
+                        linkToMainSite.appendChild(morebtn);
+
 
                         copyDiv.appendChild(copyBtn);
                         copyDiv.appendChild(copyInput);
@@ -115,7 +124,12 @@ function toCreateTest() {
                         linkToMainSite.setAttribute("class", "fullDesc");
                         linkToMainSite.setAttribute("target", "_blank");
                         linkToMainSite.setAttribute("href", _link_);
-                        linkToMainSite.textContent = "برای مشاهده ی توضیح بیشتر کلیک کنید..."
+
+                        const morebtn = document.createElement("button");
+                        morebtn.setAttribute("class", "more_button");
+                        morebtn.textContent = "توضیح بیشتر";
+
+                        linkToMainSite.appendChild(morebtn);
 
                         eachOff.appendChild(desc);
                         eachOff.appendChild(offerOff);
@@ -130,17 +144,11 @@ function toCreateTest() {
 
             const button = document.getElementsByClassName('copy_button');
 
-            console.log(button.length);
             for (i = 0; i < button.length; i++) {
                 button[i].addEventListener('click', function (event) {
-                    console.log(event.target.id);
                     let copyText = document.getElementById("input" + event.target.id);
                     chrome.runtime.sendMessage({ command: "copy", text: copyText.value }, function (response) {
-                        console.log(response.response);
                         if (response.response == 'copied') {
-                            console.log('in if')
-                            console.log(event)
-                            console.log("span" + event.target.id)
                             let tooltip = document.getElementById("span" + event.target.id);
                             tooltip.style.visibility = 'visible';
                             tooltip.innerHTML = "کد کپی شد";
@@ -148,14 +156,6 @@ function toCreateTest() {
                         }
 
                     });
-                    // copyText.focus();
-                    // copyText.select();
-                    // document.execCommand("copy");
-                    console.log(copyText);
-                    // console.log(copyText.focus());
-                    // console.log(copyText.select());
-                    // console.log(document.execCommand("copy"));
-                    // console.log(123)
 
                 });
                 button[i].addEventListener('mouseout', function (event) {
