@@ -16,7 +16,7 @@ function toCreateTest() {
     const container = document.createElement("div");
     container.setAttribute("class", "container");
 
-    app.appendChild(container);
+
 
     var API_KEY = "12959506-0c707c1255a41052fb69dcc17";
     // var URL = "https://api.chatrbaazan.ir/api/v1/extension/?url=" + "changal.com";
@@ -26,6 +26,28 @@ function toCreateTest() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
+
+            //test
+
+            const image_part = document.createElement("div");
+            image_part.setAttribute("id" , "image");
+
+
+            const img_ = document.createElement("img");
+            img_.setAttribute("id","image_content");
+            const h2_ = document.createElement("h2");
+            h2_.setAttribute("id", "result_num");
+
+            image_part.appendChild(img_);
+            image_part.appendChild(h2_);
+            app.appendChild(image_part);
+
+    //end of test
+
+            app.appendChild(container);
+
+
+
             document.getElementById("result_num").innerHTML = myObj.name;
             /*myObj.hits.length*/
 
