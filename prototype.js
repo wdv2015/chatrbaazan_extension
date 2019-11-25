@@ -56,7 +56,7 @@ function toCreateTest() {
 
 
             myObj.product_company.forEach(element => {
-                if (getCuurentDate() <= element.expiration_date || element.expiration_date == null) {
+                if (getCuurentDate() >= element.expiration_date || element.expiration_date == null) {
                     const eachOff = document.createElement("div");
                     eachOff.setAttribute("class", "card");
                     eachOff.setAttribute("dir", "rtl");
